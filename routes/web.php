@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'web'], function () {
+    Route::get('/{any?}', 'SinglePageAppController@index')->where('any', '.*')->name('spa');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

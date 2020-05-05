@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-class HomeController extends Controller
+class SinglePageAppController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -13,16 +11,15 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        return view('home');
+        return view('spa');
     }
 }
