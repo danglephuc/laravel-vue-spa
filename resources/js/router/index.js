@@ -9,12 +9,6 @@ Vue.use(Router);
 
 export const routes =[
     {
-        path: '/',
-        meta: {
-            role: Roles.none,
-        }
-    },
-    {
         path: '/login',
         name: 'Login',
         component: Login,
@@ -23,7 +17,7 @@ export const routes =[
         }
     },
     {
-        path: '/home',
+        path: '/',
         name: 'Home',
         component: Home,
         meta: {

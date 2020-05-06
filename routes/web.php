@@ -12,5 +12,7 @@
 */
 
 Route::group(['middleware' => 'web'], function () {
-    Route::get('/{any?}', 'SinglePageAppController@index')->where('any', '.*')->name('spa');
+    Route::get('/zoom-auth', 'UserController@loginWithZoom');
+    Route::get('/{any?}', 'SinglePageAppController@index')
+        ->where('any', '.*')->name('spa');
 });

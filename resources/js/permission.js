@@ -23,6 +23,8 @@ router.beforeEach(async(to, from, next) => {
         // determine whether the user has logged in
         const isUserLogged = isLogged();
 
+        console.log('role', role, isUserLogged);
+
         if (isUserLogged) {
             if (role === Roles.guest) {
                 // if is logged in, redirect to the home page

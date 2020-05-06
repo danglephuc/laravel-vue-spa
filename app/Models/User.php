@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -8,6 +8,9 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    const TYPE_PRESENTER = 0;
+    const TYPE_VIEWER = 1;
+
     use Notifiable;
 
     /**
@@ -25,7 +28,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'zoom_id', 'zoom_access_token', 'zoom_refresh_token'
     ];
 
     /**
